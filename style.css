@@ -2,6 +2,23 @@ html {
   scroll-behavior: smooth;
 }
 
+.footer-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #F8F6F1;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.footer-social-icon:hover {
+  background: #E3A730;
+  color: #1E3A54;
+}
+
 .founder-card {
   background: #F8F6F1;
   border: 1px solid #E1DACD;
