@@ -19,6 +19,27 @@ html {
   color: #1E3A54;
 }
 
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 60;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}
+
 .founder-card {
   background: #F8F6F1;
   border: 1px solid #E1DACD;
