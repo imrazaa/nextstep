@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NextStep Consultancy | Study & Life in Germany</title>
-<meta name="description" content="NextStep Consultancy guides students through Bachelor's & Master's admissions in Germany, the heart of Europe and its biggest industrial economy. Application assistance, IELTS preparation, blocked account & accommodation setup, and post-arrival support.">
+<meta name="description" content="NextStep Consultancy guides students through Bachelor's & Master's admissions in Germany, from application and IELTS prep to blocked account setup and arrival.">
 
 <link rel="canonical" href="https://imrazaa.github.io/nextstep/">
 
@@ -56,8 +56,8 @@
     })(window, document, "clarity", "script", "xs1ineb0j9");
 </script>
 
-<link rel="stylesheet" href="tailwind.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="tailwind.css?v=3">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body class="bg-cream text-ink font-body antialiased">
 
@@ -69,18 +69,18 @@
       <span class="font-heading font-bold text-lg sm:text-xl text-navy tracking-tight">NextStep <span class="text-flagred">Consul</span><span class="text-flaggold">tancy</span></span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-8 font-medium text-navysoft">
-      <a href="#why-germany" class="hover:text-accent transition-colors">Why Germany</a>
-      <a href="#services" class="hover:text-accent transition-colors">Services</a>
-      <a href="#process" class="hover:text-accent transition-colors">Process</a>
-      <a href="#founders" class="hover:text-accent transition-colors">Founders</a>
-      <a href="#faq" class="hover:text-accent transition-colors">FAQ</a>
-      <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
-    </nav>
+    <div class="hidden md:flex items-center gap-8">
+      <nav class="flex items-center gap-8 font-medium text-navysoft">
+        <a href="#why-germany" class="hover:text-accent transition-colors">Why Germany</a>
+        <a href="#services" class="hover:text-accent transition-colors">Services</a>
+        <a href="#process" class="hover:text-accent transition-colors">Process</a>
+        <a href="#founders" class="hover:text-accent transition-colors">Founders</a>
+        <a href="#faq" class="hover:text-accent transition-colors">FAQ</a>
+        <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+      </nav>
 
-    <a href="#register" class="hidden md:inline-flex bg-navy hover:bg-navysoft text-cream font-semibold px-5 py-2.5 rounded-full transition-colors">
-      Register Interest
-    </a>
+      <a href="#register" class="nav-register-btn">Register<br>Interest</a>
+    </div>
 
     <button id="menu-btn" aria-label="Open menu" class="md:hidden text-navy">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -98,7 +98,7 @@
       <a href="#founders" class="mobile-link">Founders</a>
       <a href="#faq" class="mobile-link">FAQ</a>
       <a href="#contact" class="mobile-link">Contact</a>
-      <a href="#register" class="mobile-link font-semibold text-accent">Register Interest →</a>
+      <a href="#register" class="mobile-register-btn">Register Interest</a>
     </nav>
   </div>
 </header>
@@ -126,6 +126,14 @@
         <a href="#contact" class="w-full sm:w-auto text-center bg-white hover:bg-creamalt text-navy font-semibold px-8 py-3.5 rounded-full border border-bordersoft transition-colors">
           Talk to Us
         </a>
+        <details class="hero-country-dd">
+          <summary class="hero-country-summary">Other Countries</summary>
+          <div class="hero-country-panel">
+            <a href="index.html" class="hero-country-option active">Germany</a>
+            <a href="portugal.html" class="hero-country-option">Portugal</a>
+            <a href="uk.html" class="hero-country-option">United Kingdom</a>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -139,7 +147,8 @@
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        <div class="card">
+        <div class="card card-featured">
+          <span class="pkg-badge">Key Highlight</span>
           <div class="icon-badge">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-3 0-6 1-6 3s3 3 6 3 6-1 6-3-3-3-6-3Zm0 0V4m0 10v6m-6-6.5c0 2 2.5 4 6 4.5m6-4.5c0 2-2.5 4-6 4.5" /></svg>
           </div>
@@ -147,7 +156,8 @@
           <p class="card-text">Most public universities charge little beyond a small semester contribution, giving you world-class education without the price tag.</p>
         </div>
 
-        <div class="card">
+        <div class="card card-featured">
+          <span class="pkg-badge">Key Highlight</span>
           <div class="icon-badge">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7h-3V6a3 3 0 0 0-3-3H10a3 3 0 0 0-3 3v1H4a1 1 0 0 0-1 1v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a1 1 0 0 0-1-1ZM9 6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9V6Z" /></svg>
           </div>
@@ -322,7 +332,7 @@
       <div class="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
 
         <div class="founder-card">
-          <img src="assets/founder_mohsin.jpeg" alt="Mohsin Shafique" width="104" height="104" class="founder-avatar" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'founder-initials',textContent:'MS'}))">
+          <img src="assets/founder_mohsin.jpeg" alt="Mohsin Shafique" width="104" height="104" loading="lazy" class="founder-avatar" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'founder-initials',textContent:'MS'}))">
           <h3 class="card-title !mb-1">Mohsin Shafique</h3>
           <p class="text-accent font-semibold text-sm mb-2">Co-Founder &amp; IELTS Instructor</p>
           <p class="card-text">Studying at Universität Göttingen.</p>
@@ -352,7 +362,7 @@
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSdMzvEFA4POjR6SAGuh8VfjpHiNRk3btibjBKRrQhr4GvNRgw/viewform?embedded=true&hl=en"
           class="w-full rounded-xl"
-          height="1924"
+          height="700"
           frameborder="0"
           loading="lazy"
           title="NextStep Consultancy Registration Form">
@@ -443,7 +453,7 @@
         <img src="assets/logo.jpg" alt="NextStep Consultancy logo" width="36" height="36" class="h-9 w-9 rounded-full object-cover" onerror="this.style.display='none'">
         <span class="font-heading font-bold text-white text-lg">NextStep <span class="text-flagred">Consul</span><span class="text-flaggold">tancy</span></span>
       </div>
-      <p>Your next step to study and life in Germany, Bachelor's &amp; Master's admissions, done right.</p>
+      <p>Turning your next step abroad into a clear, guided journey, from application to arrival.</p>
     </div>
     <div>
       <h4 class="text-white font-semibold mb-3">Quick Links</h4>
@@ -453,13 +463,14 @@
         <li><a href="#process" class="hover:text-white">Process</a></li>
         <li><a href="#register" class="hover:text-white">Register</a></li>
         <li><a href="#contact" class="hover:text-white">Contact</a></li>
+        <li><a href="portugal.html" class="hover:text-white">Study in Portugal</a></li>
+        <li><a href="uk.html" class="hover:text-white">Study in the UK</a></li>
       </ul>
     </div>
     <div>
       <h4 class="text-white font-semibold mb-3">Contact</h4>
       <ul class="space-y-2">
         <li>Email: <a href="mailto:nextsteppp@protonmail.com" class="hover:text-white">nextsteppp@protonmail.com</a></li>
-        <!-- TODO: add exact city if you'd like it displayed here -->
         <li>Location: Frankfurt, Germany</li>
       </ul>
 
@@ -492,6 +503,20 @@
     <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.24 8.21Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29Z"/>
   </svg>
 </a>
+
+<details class="country-float">
+  <summary class="country-float-trigger" aria-label="Switch country">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <circle cx="12" cy="12" r="9" />
+      <path stroke-linecap="round" d="M3 12h18M12 3c2.5 2.6 4 6 4 9s-1.5 6.4-4 9c-2.5-2.6-4-6-4-9s1.5-6.4 4-9Z" />
+    </svg>
+  </summary>
+  <div class="country-float-panel">
+    <a href="index.html" class="hero-country-option active">Germany</a>
+    <a href="portugal.html" class="hero-country-option">Portugal</a>
+    <a href="uk.html" class="hero-country-option">United Kingdom</a>
+  </div>
+</details>
 
 <script src="script.js"></script>
 </body>

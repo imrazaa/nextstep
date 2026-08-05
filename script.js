@@ -10,6 +10,13 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
   link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
 });
 
+// Close any open country-switcher dropdown when clicking outside it
+document.addEventListener('click', (e) => {
+  document.querySelectorAll('.hero-country-dd[open], .country-float[open]').forEach(menu => {
+    if (!menu.contains(e.target)) menu.removeAttribute('open');
+  });
+});
+
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 

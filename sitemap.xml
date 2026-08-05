@@ -5,4 +5,14 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://imrazaa.github.io/nextstep/portugal.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://imrazaa.github.io/nextstep/uk.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
