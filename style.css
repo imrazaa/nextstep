@@ -277,6 +277,29 @@ body {
   background: #3A5670;
 }
 
+.eval-banner-btn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  background: #1E3A54;
+  color: #F8F6F1;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: background 0.15s ease;
+}
+
+.eval-banner-btn:hover {
+  background: #3A5670;
+}
+
+@media (min-width: 640px) {
+  .eval-banner-btn {
+    width: auto;
+  }
+}
+
 /* Hero "Other Countries" dropdown, sits alongside the CTA buttons but reads as secondary, not a third button */
 .hero-country-dd {
   position: relative;
@@ -513,4 +536,56 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+/* Profile evaluator results */
+.eval-criterion {
+  background: #F8F6F1;
+  border: 1px solid #E1DACD;
+  border-radius: 0.85rem;
+  padding: 1rem 1.25rem;
+}
+
+.eval-criterion-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.eval-criterion-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #1E3A54;
+  font-size: 0.95rem;
+}
+
+.eval-criterion-text {
+  color: #647380;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.eval-tier-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.eval-tier-good {
+  background: #E3F0EA;
+  color: #3E7C6A;
+}
+
+.eval-tier-warn {
+  background: #FBEAE6;
+  color: #C33C2E;
+}
+
+.eval-tier-neutral {
+  background: #EFEAE0;
+  color: #1E3A54;
 }
