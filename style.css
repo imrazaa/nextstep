@@ -2,6 +2,153 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hero background: one of two treatments (passport stamps or a flight-path route), picked at random per
+   page load by script.js, sits behind the hero text */
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Soft veil so hero text stays readable over either decoration treatment */
+.hero-decor::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(248, 246, 241, 0.58);
+}
+
+/* -- Passport stamps -- */
+.stamp {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 9999px;
+  border: 2.5px solid #1E3A54;
+  color: #1E3A54;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.19;
+}
+
+.stamp::after {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 1px dashed #1E3A54;
+  border-radius: 9999px;
+}
+
+.stamp-code {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+}
+
+.stamp-text {
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.stamp-center {
+  width: 130px;
+  height: 130px;
+  opacity: 0.26;
+  border-color: #3E7C6A;
+  color: #3E7C6A;
+}
+
+.stamp-center::after {
+  border-color: #3E7C6A;
+  inset: 9px;
+}
+
+.stamp-center .stamp-code {
+  font-size: 32px;
+}
+
+.stamp-center .stamp-text {
+  font-size: 9px;
+}
+
+/* -- Flight path route: real Eurasia map (assets/eurasia-map.svg, CC0 basemap,
+   restyled) with an animated flight path from Pakistan to the page's country -- */
+.hero-decor-route {
+  overflow: hidden;
+}
+
+.map-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+.hero-decor-route svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.route-plane {
+  offset-rotate: auto;
+  animation: route-fly 16s linear infinite;
+}
+
+@keyframes route-fly {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+
+@media (max-width: 640px) {
+  .stamp {
+    width: 60px;
+    height: 60px;
+  }
+  .stamp-code {
+    font-size: 15px;
+  }
+  .stamp-text {
+    font-size: 5px;
+  }
+  .stamp-center {
+    width: 90px;
+    height: 90px;
+  }
+  .stamp-center .stamp-code {
+    font-size: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-plane {
+    animation: none;
+    offset-distance: 50%;
+  }
+}
+
 .footer-social-icon {
   display: inline-flex;
   align-items: center;
