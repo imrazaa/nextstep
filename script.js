@@ -17,20 +17,6 @@ document.addEventListener('click', (e) => {
   });
 });
 
-// Hero background decoration: randomly show one of two treatments (passport
-// stamps or a flight-path route) per page load. The route map image is only
-// fetched when it's actually chosen, so the other 50% of loads don't pay for it.
-const heroDecorStamps = document.querySelector('.hero-decor-stamps');
-const heroDecorRoute = document.querySelector('.hero-decor-route');
-if (heroDecorStamps && heroDecorRoute) {
-  const chosen = Math.random() < 0.5 ? heroDecorStamps : heroDecorRoute;
-  if (chosen === heroDecorRoute) {
-    const mapImg = heroDecorRoute.querySelector('.map-img');
-    if (mapImg && mapImg.dataset.src) mapImg.src = mapImg.dataset.src;
-  }
-  chosen.classList.remove('hidden');
-}
-
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
