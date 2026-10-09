@@ -53,3 +53,25 @@ contactForm.addEventListener('submit', async (e) => {
     formStatus.classList.add('text-flagred');
   }
 });
+
+// Registration form: swap the placeholder for the Google Form iframe only when the visitor asks for it
+// (button click, or any "Register Your Interest" link to #register, or landing on #register directly)
+const formFacade = document.querySelector('.form-facade');
+
+function loadRegistrationForm() {
+  if (!formFacade || !formFacade.isConnected) return;
+  const iframe = document.createElement('iframe');
+  iframe.src = formFacade.dataset.formSrc;
+  iframe.className = 'w-full rounded-xl';
+  iframe.height = '700';
+  iframe.setAttribute('frameborder', '0');
+  iframe.title = 'NextStep Consultancy Registration Form';
+  iframe.textContent = 'Loading form…';
+  formFacade.replaceWith(iframe);
+}
+
+if (formFacade) {
+  formFacade.querySelector('button').addEventListener('click', loadRegistrationForm);
+  document.querySelectorAll('a[href="#register"]').forEach(link => link.addEventListener('click', loadRegistrationForm));
+  if (location.hash === '#register') loadRegistrationForm();
+}

@@ -1,3 +1,26 @@
+/* ============ Self-hosted fonts (latin subset) ============ */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(assets/fonts/inter-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/poppins-700-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(assets/fonts/poppins-800-latin.woff2) format('woff2');
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -589,3 +612,64 @@ body {
   background: #EFEAE0;
   color: #1E3A54;
 }
+
+/* ============ Testimonial video ============ */
+.testimonial-list { margin-top: 2rem; }
+.testimonial {
+  margin: 0;
+  max-width: 22rem;
+  justify-self: center;
+  width: 100%;
+}
+.testimonial-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 576 / 656;
+  background: #000;
+  border-radius: 1rem;
+  border: 1px solid #E1DACD;
+  box-shadow: 0 10px 30px -12px rgba(30, 58, 84, 0.35);
+}
+.testimonial-caption {
+  margin-top: 0.875rem;
+  font-size: 0.9rem;
+  color: #647380;
+  text-align: center;
+}
+.testimonial-link {
+  display: inline-block;
+  margin-left: 0.25rem;
+  color: #3E7C6A;
+  font-weight: 600;
+  text-decoration: none;
+}
+.testimonial-link:hover { text-decoration: underline; }
+
+/* ============ Registration form placeholder ============ */
+.form-facade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 14rem;
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+.form-facade-text {
+  color: #647380;
+  max-width: 28rem;
+}
+.form-facade-btn {
+  display: inline-block;
+  background: #3E7C6A;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.form-facade-btn:hover { background: #1E3A54; }
