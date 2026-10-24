@@ -193,6 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const packageNameEl = document.getElementById('result-package');
   const packageTextEl = document.getElementById('result-package-text');
   const ctaEl = document.getElementById('result-cta');
+  const registerLinkEl = document.getElementById('result-register-link');
 
   // A CGPA typed under one scale is meaningless under another, clear it rather than silently misreading it.
   const cgpaScaleEl = document.getElementById('eval-cgpa-scale');
@@ -251,6 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
     packageNameEl.textContent = result.packageName;
     packageTextEl.textContent = result.packageText;
     ctaEl.href = `${COUNTRY_PAGES[result.countryKey]}#register`;
+    registerLinkEl.href = ctaEl.href;
 
     resultsPanel.classList.remove('hidden');
     resultsPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });

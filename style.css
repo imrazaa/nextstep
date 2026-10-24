@@ -674,6 +674,41 @@ body {
 }
 .form-facade-btn:hover { background: #1E3A54; }
 
+/* Marks the profile evaluator as an early version; brand gold so it reads the same on every country page */
+.beta-tag {
+  display: inline-block;
+  vertical-align: middle;
+  background: #E3A730;
+  color: #1E3A54;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.25rem 0.45rem;
+  border-radius: 9999px;
+  margin-left: 0.25rem;
+  position: relative;
+  top: -0.1em;
+}
+
+.eval-note-link {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.eval-note-link:hover {
+  color: #3E7C6A;
+}
+
+.beta-tag-lg {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.7rem;
+  margin-left: 0.5rem;
+  top: -0.4em;
+}
+
 /* ============ COUNTRY THEMES ============
    A page opts in with <body data-country="...">; only buttons and hero text take the flag colours,
    backgrounds stay on the shared cream/white palette. The defaults below suit flags whose main

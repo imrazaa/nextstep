@@ -55,7 +55,7 @@
 </script>
 
 <link rel="stylesheet" href="tailwind.css?v=6">
-<link rel="stylesheet" href="style.css?v=15">
+<link rel="stylesheet" href="style.css?v=20">
 </head>
 <body class="bg-cream text-ink font-body antialiased">
 
@@ -69,7 +69,7 @@
 
     <div class="hidden lg:flex items-center gap-6">
       <nav class="flex items-center gap-5 font-medium text-navysoft">
-        <a href="#evaluate" class="hover:text-accent transition-colors">Evaluate</a>
+        <a href="#evaluate" class="hover:text-accent transition-colors">Evaluate <span class="beta-tag">Beta</span></a>
         <a href="#faq" class="hover:text-accent transition-colors">FAQ</a>
         <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
         <a href="index.html" class="hover:text-accent transition-colors">Home</a>
@@ -88,7 +88,7 @@
   <!-- Mobile menu -->
   <div id="mobile-menu" class="lg:hidden hidden bg-cream border-t border-bordersoft">
     <nav class="flex flex-col px-5 py-4 gap-4 font-medium text-navysoft">
-      <a href="#evaluate" class="mobile-link">Evaluate</a>
+      <a href="#evaluate" class="mobile-link">Evaluate <span class="beta-tag">Beta</span></a>
       <a href="#faq" class="mobile-link">FAQ</a>
       <a href="#contact" class="mobile-link">Contact</a>
       <a href="index.html" class="mobile-link">Home</a>
@@ -106,11 +106,14 @@
         Free, instant, no account needed
       </span>
       <h1 class="font-heading font-extrabold text-4xl sm:text-6xl leading-tight text-navy">
-        Evaluate <span class="text-accent">Your Profile</span>
+        Evaluate <span class="text-accent">Your Profile</span> <span class="beta-tag beta-tag-lg">Beta</span>
       </h1>
       <p class="mt-6 text-lg sm:text-xl text-muted max-w-2xl mx-auto">
         Built for Pakistani students. Enter your degree, CGPA, English test score, and experience to see how
         you compare against typical admission requirements in Germany, Portugal, the UK, Sweden, Norway, Canada, and Austria, in under 2 minutes.
+      </p>
+      <p class="mt-4 text-sm text-muted max-w-2xl mx-auto">
+        This is an early, simplified version of our evaluator. A more detailed evaluation is coming soon.
       </p>
     </div>
   </section>
@@ -216,6 +219,10 @@
           </div>
           <a href="#" id="result-cta" class="pkg-cta pkg-cta-featured">Register Your Interest</a>
         </div>
+
+        <p class="text-sm text-navy mt-6 text-center">
+          This is a simplified check. For a full, personalised evaluation, <a href="#" id="result-register-link" class="font-semibold eval-note-link">register your interest</a> or <a href="#contact" class="font-semibold eval-note-link">talk to us</a>.
+        </p>
 
         <p class="text-xs text-muted mt-4 text-center">
           This is an automated estimate based on typical published requirements, not a guarantee of admission. Actual requirements vary by university and program, we'll confirm exact details with you.
@@ -383,6 +390,6 @@
 </details>
 
 <script src="script.js?v=5"></script>
-<script src="evaluate.js?v=8"></script>
+<script src="evaluate.js?v=9"></script>
 </body>
 </html>
