@@ -30,7 +30,11 @@ function saveEvaluationAnonymously(data, result) {
 const COUNTRY_REQUIREMENTS = {
   germany: { label: 'Germany', minPercent: 65, idealPercent: 75, minIELTS: 6.0, idealIELTS: 6.5 },
   portugal: { label: 'Portugal', minPercent: 60, idealPercent: 70, minIELTS: 6.0, idealIELTS: 6.5 },
-  uk: { label: 'the UK', minPercent: 60, idealPercent: 70, minIELTS: 6.0, idealIELTS: 6.5 }
+  uk: { label: 'the UK', minPercent: 60, idealPercent: 70, minIELTS: 6.0, idealIELTS: 6.5 },
+  sweden: { label: 'Sweden', minPercent: 60, idealPercent: 75, minIELTS: 6.5, idealIELTS: 7.0 },
+  norway: { label: 'Norway', minPercent: 65, idealPercent: 75, minIELTS: 6.5, idealIELTS: 7.0 },
+  canada: { label: 'Canada', minPercent: 65, idealPercent: 75, minIELTS: 6.5, idealIELTS: 7.0 },
+  austria: { label: 'Austria', minPercent: 65, idealPercent: 75, minIELTS: 6.0, idealIELTS: 6.5 }
 };
 
 const EXPERIENCE_POINTS = { none: 0, under1: 0.5, '1to2': 1, '2plus': 1 };
@@ -216,7 +220,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const COUNTRY_PAGES = { germany: 'index.html', portugal: 'portugal.html', uk: 'uk.html' };
+  const COUNTRY_PAGES = {
+    germany: 'index.html', portugal: 'portugal.html', uk: 'uk.html',
+    sweden: 'sweden.html', norway: 'norway.html', canada: 'canada.html', austria: 'austria.html'
+  };
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();

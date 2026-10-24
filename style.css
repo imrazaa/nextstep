@@ -673,3 +673,108 @@ body {
   transition: background 0.15s ease;
 }
 .form-facade-btn:hover { background: #1E3A54; }
+
+/* ============ COUNTRY THEMES ============
+   A page opts in with <body data-country="...">; only buttons and hero text take the flag colours,
+   backgrounds stay on the shared cream/white palette. The defaults below suit flags whose main
+   colour can carry white text; a country overrides only what differs (e.g. Germany's gold needs dark text). */
+[data-country] {
+  --country-on-primary: #fff;
+  --country-on-primary-dark: #fff;
+  --country-outline: var(--country-primary);
+  --country-highlight: var(--country-primary);
+  --country-highlight-underline: transparent;
+}
+[data-country="germany"] {
+  --country-primary: #F2C230;
+  --country-on-primary: #1A1A1A;
+  --country-primary-dark: #1A1A1A;
+  --country-on-primary-dark: #F2C230;
+  --country-outline: #1A1A1A;
+  --country-highlight: #1A1A1A;
+  --country-highlight-underline: #F2C230;
+  --country-ink: #1A1A1A;
+}
+[data-country="portugal"] {
+  --country-primary: #2E7D4F;
+  --country-primary-dark: #1F5E3A;
+  --country-ink: #1F2328;
+}
+[data-country="uk"] {
+  --country-primary: #2B4C8C;
+  --country-primary-dark: #1E3766;
+  --country-ink: #1A2340;
+}
+[data-country="sweden"] {
+  --country-primary: #2A7AB8;
+  --country-primary-dark: #1F5F91;
+  --country-ink: #1A2B3C;
+}
+[data-country="norway"] {
+  --country-primary: #1F3A6B;
+  --country-primary-dark: #C8384A;
+  --country-highlight: #C8384A;
+  --country-ink: #13294B;
+}
+[data-country="canada"] {
+  --country-primary: #D9363E;
+  --country-primary-dark: #B52B32;
+  --country-ink: #1F2328;
+}
+[data-country="austria"] {
+  --country-primary: #D33F4A;
+  --country-primary-dark: #B0333D;
+  --country-ink: #1F2328;
+}
+
+/* Hero text */
+[data-country] .hero h1 { color: var(--country-ink); }
+[data-country] .hero h1 .text-accent {
+  color: var(--country-highlight);
+  text-decoration: underline;
+  text-decoration-color: var(--country-highlight-underline);
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.12em;
+}
+[data-country] .hero h1 + p,
+[data-country] .hero > div > span:first-child { color: var(--country-ink); }
+[data-country] .hero > div > span:first-child { border-color: var(--country-primary); }
+
+/* Solid buttons */
+[data-country] .bg-accent,
+[data-country] .nav-register-btn,
+[data-country] .mobile-register-btn,
+[data-country] .eval-banner-btn,
+[data-country] .pkg-cta-featured,
+[data-country] .form-facade-btn {
+  background: var(--country-primary);
+  border-color: var(--country-primary);
+  color: var(--country-on-primary);
+}
+[data-country] .bg-accent:hover,
+[data-country] .nav-register-btn:hover,
+[data-country] .mobile-register-btn:hover,
+[data-country] .eval-banner-btn:hover,
+[data-country] .pkg-cta-featured:hover,
+[data-country] .form-facade-btn:hover,
+[data-country] .pkg-cta:not(.pkg-cta-featured):hover {
+  background: var(--country-primary-dark);
+  border-color: var(--country-primary-dark);
+  color: var(--country-on-primary-dark);
+}
+
+/* Outline buttons and country switchers */
+[data-country] .pkg-cta:not(.pkg-cta-featured),
+[data-country] .hero a.bg-white,
+[data-country] .country-float-trigger {
+  color: var(--country-outline);
+  border-color: var(--country-primary);
+}
+[data-country] .hero-country-summary:hover {
+  color: var(--country-outline);
+  border-color: var(--country-primary);
+}
+[data-country] .hero-country-option.active {
+  background: var(--country-primary);
+  color: var(--country-on-primary);
+}
