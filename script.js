@@ -20,6 +20,57 @@ document.addEventListener('click', (e) => {
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// "Admissions open" notice: slides in shortly after load, hides itself after ADMISSIONS_NOTICE.endsOn,
+// and stays dismissed for a week per visitor. Update the fields below for the next intake round.
+const ADMISSIONS_NOTICE = {
+  id: '2027-summer',
+  endsOn: '2027-01-15T23:59:59',
+  dismissDays: 7
+};
+
+function showAdmissionsNotice() {
+  if (new Date() > new Date(ADMISSIONS_NOTICE.endsOn)) return;
+  const storageKey = `admissionsNoticeDismissed:${ADMISSIONS_NOTICE.id}`;
+  try {
+    const dismissedAt = Number(localStorage.getItem(storageKey));
+    if (dismissedAt && Date.now() - dismissedAt < ADMISSIONS_NOTICE.dismissDays * 86400000) return;
+  } catch (err) {
+    // Storage blocked (private mode etc.), just show the notice.
+  }
+
+  // No point linking visitors to the page they're already on.
+  const country = document.body.dataset.country;
+  const links = [
+    country !== 'germany' ? '<a href="index.html" class="admissions-notice-link">Germany →</a>' : '',
+    country !== 'portugal' ? '<a href="portugal.html" class="admissions-notice-link">Portugal →</a>' : '',
+    country !== 'canada' ? '<a href="canada.html" class="admissions-notice-link">Canada →</a>' : ''
+  ].join('');
+
+  const notice = document.createElement('aside');
+  notice.className = 'admissions-notice';
+  notice.setAttribute('role', 'status');
+  notice.innerHTML = `
+    <button type="button" class="admissions-notice-close" aria-label="Dismiss notice">✕</button>
+    <p class="admissions-notice-title">📢 Admissions now open</p>
+    <ul class="admissions-notice-text">
+      <li><strong>Germany:</strong> Summer Semester 2027</li>
+      <li><strong>Portugal:</strong> 2027/28 intake (only one intake a year)</li>
+      <li><strong>Canada:</strong> Fall 2027</li>
+    </ul>
+    ${links ? `<div class="admissions-notice-links">${links}</div>` : ''}`;
+
+  notice.querySelector('.admissions-notice-close').addEventListener('click', () => {
+    notice.classList.remove('is-visible');
+    try { localStorage.setItem(storageKey, String(Date.now())); } catch (err) {}
+    setTimeout(() => notice.remove(), 300);
+  });
+
+  document.body.appendChild(notice);
+  setTimeout(() => notice.classList.add('is-visible'), 1000);
+}
+
+showAdmissionsNotice();
+
 // Contact form (Formspree) - AJAX submit with inline status message
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
